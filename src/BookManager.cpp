@@ -35,6 +35,10 @@ Book* BookManager::searchBookByID(int id) {
     return nullptr;
 }
 
+vector<Book>& BookManager::getBooks(){
+    return books;
+}
+
 void BookManager::borrowBook(int id) {
 
     Book* book = searchBookByID(id);

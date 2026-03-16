@@ -19,6 +19,8 @@ class BookManager {
 
         Book* searchBookByID(int id);
 
+        vector<Book>& getBooks();
+
         void borrowBook(int id);
 
         void returnBook(int id);
