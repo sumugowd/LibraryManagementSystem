@@ -1,18 +1,31 @@
 #include "../include/Book.h"
 #include "../include/BookManager.h"
 #include "../include/FIleManager.h"
+#include "../include/Student.h"
+#include "../include/Librarian.h"
+#include "../include/UserManager.h"
 
 int main() {
 
-    BookManager manager;
-    
-    Book b1(101, "Clean Code", "Robert Martin");
-    Book b2(102, "Design Patterns", "GoF");
-    Book b3(103, "C++ Primer", "Lippman");
+    UserManager manager;
 
-    manager.displayAllBooks();
+    manager.addStudent(1, "Sumu");
+    manager.addStudent(2, "Ravi");
 
-    FileManager::saveBooks(manager.getBooks());
+    manager.addLibrarian(100, "Admin");
+
+    cout << "\nAll User\n";
+
+    manager.displayAllUsers();
+
+    cout << "\nSearch User ID 2\n";
+
+    User* user = manager.searchUser(2);
+
+    if(user != nullptr)
+        user->displayUser();
+    else
+        cout << "User not found\n";
 
     return 0;
 }
