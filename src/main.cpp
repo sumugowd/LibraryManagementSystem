@@ -4,28 +4,26 @@
 #include "../include/Student.h"
 #include "../include/Librarian.h"
 #include "../include/UserManager.h"
+#include "../include/TransactionManager.h"
 
 int main() {
 
-    UserManager manager;
+    BookManager bookManager;
+    UserManager userManager;
+    TransactionManager transactionManager;
 
-    manager.addStudent(1, "Sumu");
-    manager.addStudent(2, "Ravi");
+    bookManager.addBook(Book(101,"Clean Code", "Robert Martin"));
+    bookManager.addBook(Book(102, "C++ Primer", "Lippman"));
 
-    manager.addLibrarian(100, "Admin");
+    userManager.addStudent(1,"Sumu");
 
-    cout << "\nAll User\n";
+    bookManager.borrowBook(101);
 
-    manager.displayAllUsers();
+    transactionManager.addTransaction(1,101,"Borrow");
 
-    cout << "\nSearch User ID 2\n";
+    cout << "\nTransactions\n";
 
-    User* user = manager.searchUser(2);
-
-    if(user != nullptr)
-        user->displayUser();
-    else
-        cout << "User not found\n";
+    transactionManager.displayTransactions();
 
     return 0;
 }
