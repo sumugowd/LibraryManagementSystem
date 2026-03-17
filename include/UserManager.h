@@ -22,6 +22,8 @@ class UserManager {
         User* searchUser(int id);
 
         void displayAllUsers();
+
+        int getUserCount();
 };
 
 #endif

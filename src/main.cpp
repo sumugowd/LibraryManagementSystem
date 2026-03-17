@@ -20,7 +20,8 @@ int main() {
         cout << "5. Return Book\n";
         cout << "6. View Transaction\n";
         cout << "7. Search Book\n";
-        cout << "8. Exit\n";
+        cout << "8. Show Report\n";
+        cout << "9. Exit\n";
 
         cout << "Enter choice: ";
         cin >> choice;
@@ -55,6 +56,10 @@ int main() {
                 break;
 
             case 8:
+                library.showReport();
+                break;
+
+            case 9:
                 cout << "Exiting system..\n";
                 return 0;
 

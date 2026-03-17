@@ -10,7 +10,7 @@ void TransactionManager::addTransaction(int userID, int bookID, string action){
 }
 
 void TransactionManager::displayTransactions(){
-    
+
     if(transactions.empty()){
         cout << "No transactions found\n";
         return;
@@ -21,4 +21,9 @@ void TransactionManager::displayTransactions(){
         t.displayTransaction();
         cout << endl;
     }
+}
+
+int TransactionManager::getTransactionCount(){
+
+    return transactions.size();
 }

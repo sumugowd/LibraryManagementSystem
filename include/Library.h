@@ -5,6 +5,7 @@
 #include "UserManager.h"
 #include "TransactionManager.h"
 #include "SearchEngine.h"
+#include "ReportManager.h"
 
 class Library {
 
@@ -14,6 +15,7 @@ class Library {
         UserManager userManager;
         TransactionManager transactionManager;
         SearchEngine searchEngine;
+        ReportManager reportManager;
 
     public:
 
@@ -30,6 +32,8 @@ class Library {
         void viewTransactions();
 
         void searchBook();
+
+        void showReport();
 };
 
 #endif

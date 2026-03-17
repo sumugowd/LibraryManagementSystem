@@ -16,6 +16,8 @@ class TransactionManager{
         void addTransaction(int userID, int bookID, string action);
 
         void displayTransactions();
+
+        int getTransactionCount();
 };
 
 #endif

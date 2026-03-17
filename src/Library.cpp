@@ -96,3 +96,8 @@ void Library::searchBook() {
         book->displayBook();
     }
 }
+
+void Library::showReport() {
+
+    reportManager.generateReport(bookManager,userManager,transactionManager);
+}

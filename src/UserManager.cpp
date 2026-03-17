@@ -37,3 +37,8 @@ void UserManager::displayAllUsers(){
         cout << endl;
     }
 }
+
+int UserManager::getUserCount(){
+
+    return users.size();
+}
