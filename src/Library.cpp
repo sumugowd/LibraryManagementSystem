@@ -25,6 +25,8 @@ void Library::addBook(){
 void Library::viewBooks() {
 
     bookManager.displayAllBooks();
+
+    searchEngine.indexBooks(bookManager.getBooks());
 }
 
 void Library::registerStudent(){
@@ -75,4 +77,22 @@ void Library::returnBook() {
 
 void Library::viewTransactions() {
     transactionManager.displayTransactions();
+}
+
+void Library::searchBook() {
+
+    int id;
+
+    cout << "Enter Book ID: ";
+    cin >> id;
+
+    searchEngine.indexBooks(bookManager.getBooks());
+
+    Book* book = searchEngine.searchBook(id);
+
+    if(book == nullptr){
+        cout << "Book not found\n";
+    }else{
+        book->displayBook();
+    }
 }
