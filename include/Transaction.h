@@ -18,6 +18,10 @@ class Transaction {
         Transaction(int uid, int bid, string act);
 
         void displayTransaction();
+
+        int getUserID();
+        int getBookID();
+        string getAction();
 };
 
 #endif

@@ -13,3 +13,15 @@ void Transaction::displayTransaction(){
     cout << "Book ID: " << bookID << endl;
     cout << "Action: " << action << endl;
 }
+
+int Transaction::getUserID(){
+    return userID;
+}
+
+int Transaction::getBookID(){
+    return bookID;
+}
+
+string Transaction::getAction(){
+    return action;
+}

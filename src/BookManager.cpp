@@ -1,4 +1,5 @@
 #include "../include/BookManager.h"
+#include "../include/FIleManager.h"
 #include <iostream>
 
 using namespace std;
@@ -6,6 +7,8 @@ using namespace std;
 void BookManager::addBook(Book book) {
 
     books.push_back(book);
+
+    FileManager::saveBooks(books);
 
     cout << "Book added successfully\n";
 }
@@ -44,11 +47,13 @@ void BookManager::borrowBook(int id) {
     Book* book = searchBookByID(id);
 
     if(book == nullptr) {
-        cout << "Book not fount\n";
+        cout << "Book not found\n";
         return;
     }
 
     book ->borrowBook();
+
+    FileManager::saveBooks(books);
 }
 
 void BookManager::returnBook(int id) {
@@ -61,4 +66,10 @@ void BookManager::returnBook(int id) {
     }
 
     book->returnBook();
+
+    FileManager::saveBooks(books);
+}
+
+BookManager::BookManager(){
+    books = FileManager::loadBooks();
 }

@@ -18,6 +18,8 @@ class TransactionManager{
         void displayTransactions();
 
         int getTransactionCount();
+
+        TransactionManager();
 };
 
 #endif

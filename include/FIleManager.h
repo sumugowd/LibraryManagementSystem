@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "Book.h"
+#include "Transaction.h"
 
 using namespace std;
 
@@ -14,6 +15,9 @@ class FileManager {
 
         static vector<Book> loadBooks();
 
+        static void saveTransactions(vector<Transaction>& transactions);
+
+        static vector<Transaction> loadTransactions();
 
 };
 

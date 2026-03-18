@@ -25,6 +25,8 @@ class BookManager {
 
         void returnBook(int id);
 
+        BookManager();
+
 };
 
 #endif

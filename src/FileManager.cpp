@@ -1,4 +1,5 @@
-#include "../include/FIleManager.h"
+#include "../include/FileManager.h"
+#include "../include/Transaction.h"
 #include<fstream>
 #include<sstream>
 
@@ -47,4 +48,41 @@ vector<Book> FileManager::loadBooks() {
     file.close();
 
     return books;
+}
+
+void FileManager::saveTransactions(vector<Transaction>& transactions){
+
+    ofstream file("data/transactions.txt");
+
+    for(Transaction &t : transactions){
+
+        file << t.getUserID() << "|" << t.getBookID() << "|" << t.getAction() << endl;
+    }
+    file.close();
+}
+
+vector<Transaction> FileManager::loadTransactions() {
+
+    vector<Transaction> transactions;
+
+    ifstream file("data/transactions.txt");
+
+    string line;
+
+    while(getline(file, line)){
+
+        stringstream ss(line);
+        
+        string uid, bid, action;
+
+        getline(ss, uid, '|');
+        getline(ss, bid, '|');
+        getline(ss, action, '|');
+
+        transactions.push_back(Transaction(stoi(uid), stoi(bid), action));
+    }
+
+    file.close();
+
+    return transactions;
 }
