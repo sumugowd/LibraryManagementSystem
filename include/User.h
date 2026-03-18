@@ -11,6 +11,8 @@ class User {
     protected:
         int userID;
         string name;
+        string role;
+        string password;
 
     public:
 
@@ -19,6 +21,9 @@ class User {
 
         int getUserID();
         string getName();
+        string getRole();
+        string getPassword();
+        void setCredentials(string r, string p);
 
         virtual void displayUser();
 };

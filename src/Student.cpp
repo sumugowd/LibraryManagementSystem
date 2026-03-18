@@ -4,8 +4,9 @@ Student::Student() : User() {
     borrowedBooks = 0;
 }
 
-Student::Student(int id, string name) : User(id, name) {
+Student::Student(int id, string name) : User(id, name){
     borrowedBooks = 0;
+    role = "student";
 }
 
 void Student::borrowBook() {

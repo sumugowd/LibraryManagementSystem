@@ -20,10 +20,14 @@ class UserManager {
         void addLibrarian(int id, string name);
 
         User* searchUser(int id);
+        
+        User* login(int id, string password);
 
         void displayAllUsers();
 
         int getUserCount();
+        
+        UserManager();
 };
 
 #endif

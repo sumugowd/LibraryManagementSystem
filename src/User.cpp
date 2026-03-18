@@ -18,6 +18,19 @@ string User::getName() {
     return name;
 }
 
+string User::getRole(){
+    return role;
+}
+
+string User::getPassword(){
+    return password;
+}
+
+void User::setCredentials(string r, string p){
+    role = r;
+    password = p;
+}
+
 void User::displayUser() {
     cout << "User ID: " << userID << endl;
     cout << "Name: " << name << endl;

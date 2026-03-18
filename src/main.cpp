@@ -6,6 +6,33 @@ using namespace std;
 int main() {
 
     Library library;
+    UserManager userManager;
+
+    int id;
+    string password;
+
+    cout << "===== LOGIN =====\n";
+
+    cout << "Enter User ID: ";
+    cin >> id;
+
+    cout << "Enter Password: ";
+    cin >> password;
+
+    User* currentUser = userManager.login(id, password);
+
+    if(currentUser == nullptr){
+        cout << "Invalid credentials\n";
+        return 0;
+    }
+
+    cout << "\nLogin Successful!\n";
+
+    cout << "Welcome " << currentUser->getName() << endl;
+
+    if(currentUser->getRole() == "student"){
+        cout << "Limited access mode\n";
+    }
 
     int choice;
 
