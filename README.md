@@ -1,17 +1,20 @@
 # 📚 Library Management System (C++)
 
-A placement-level **Library Management System** built in **C++ using Object-Oriented Programming and Data Structures**.
-The project simulates a real library system where books, users, and transactions are managed efficiently.
+A **Library Management System** built using **C++**, demonstrating the use of Object-Oriented Programming, Data Structures, and File Handling.
+The application simulates a real-world library where books, users, and transactions are managed efficiently with persistent storage.
 
 ---
 
 # 🚀 Features
 
-* Add and manage books
+* Add, view, and delete books
+* Prevent duplicate book IDs
 * Register students and librarians
+* Login system with authentication
+* Role-based access (Admin / Student)
 * Borrow and return books
-* Track transactions
-* Search books using efficient lookup
+* Track transactions with history
+* Search books by ID
 * Generate library reports and statistics
 * Persistent storage using file handling
 
@@ -29,18 +32,18 @@ The project simulates a real library system where books, users, and transactions
 ### Data Structures
 
 * `vector` for dynamic storage
-* `map` for fast lookup
+* `map` for efficient lookup
 
 ### File Handling
 
-* Store books in files
-* Store transaction history
+* Store and retrieve books, users, and transactions from files
 
 ### Software Design
 
 * Modular architecture
 * Manager classes
 * Menu-driven system
+* Separation of concerns
 
 ---
 
@@ -55,7 +58,7 @@ Library
  └── ReportManager
 ```
 
-Core Classes
+### Core Classes
 
 ```
 Book
@@ -65,7 +68,7 @@ Librarian
 Transaction
 ```
 
-System Classes
+### System Classes
 
 ```
 Library
@@ -112,9 +115,9 @@ Run the program:
 
 # 📊 Example Menu
 
-```
-====== LIBRARY MANAGEMENT SYSTEM ======
+### Admin Menu
 
+```
 1 Add Book
 2 View Books
 3 Register Student
@@ -123,14 +126,25 @@ Run the program:
 6 View Transactions
 7 Search Book
 8 Show Report
-9 Exit
+9 Delete Book
+10 Exit
+```
+
+### Student Menu
+
+```
+1 View Books
+2 Search Book
+3 Borrow Book
+4 Return Book
+5 Exit
 ```
 
 ---
 
 # 🎯 Learning Outcome
 
-This project demonstrates how **OOP, Data Structures, and File Handling** are used together to build a real-world application.
+This project demonstrates how **Object-Oriented Programming, Data Structures, File Handling, and basic authentication** can be combined to build a modular and scalable application.
 
 ---
 

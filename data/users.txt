@@ -1,2 +1,0 @@
-1|Sumu|student|1234
-100|Admin|admin|admin123
