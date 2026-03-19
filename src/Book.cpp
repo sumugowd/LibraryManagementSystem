@@ -43,7 +43,7 @@ void Book::borrowBook() {
 
 void Book::returnBook() {
     available = true;
-    cout << "Book returned successfully";
+    cout << "Book returned successfully\n";
 }
 
 void Book::displayBook() {

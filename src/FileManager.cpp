@@ -56,7 +56,7 @@ void FileManager::saveTransactions(vector<Transaction>& transactions){
 
     for(Transaction &t : transactions){
 
-        file << t.getUserID() << "|" << t.getBookID() << "|" << t.getAction() << endl;
+        file << t.getUserID() << "|" << t.getBookID() << "|" << t.getAction() << "|" << t.getBorrowDate() << "|" << t.getDueDate() << "|" << endl;
     }
     file.close();
 }

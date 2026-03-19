@@ -39,59 +39,98 @@ int main() {
     while(true){
         
         cout << "\n====== LIBRARY MANAGEMENT SYSTEM ======\n";
+        if(currentUser->getRole() == "admin"){
 
-        cout << "1. Add Book\n";
-        cout << "2. View BOoks\n";
-        cout << "3. Register Student\n";
-        cout << "4. Borrow Book\n";
-        cout << "5. Return Book\n";
-        cout << "6. View Transaction\n";
-        cout << "7. Search Book\n";
-        cout << "8. Show Report\n";
-        cout << "9. Exit\n";
+            cout << "1. Add Book\n";
+            cout << "2. View BOoks\n";
+            cout << "3. Register Student\n";
+            cout << "4. Borrow Book\n";
+            cout << "5. Return Book\n";
+            cout << "6. View Transaction\n";
+            cout << "7. Search Book\n";
+            cout << "8. Show Report\n";
+            cout << "9. Exit\n";
+
+        }else{
+
+            cout << "1. View Books\n";
+            cout << "2. Search Book\n";
+            cout << "3. Borrow Book\n";
+            cout << "4. Return Book\n";
+            cout << "5. Exit\n";
+        }
 
         cout << "Enter choice: ";
         cin >> choice;
 
-        switch (choice){
-            case 1:
-                library.addBook();
-                break;
+        if(currentUser->getRole() == "admin"){
+
+            switch (choice){
+                case 1:
+                    library.addBook();
+                    break;
             
-            case 2:
-                library.viewBooks();
-                break;
+                case 2:
+                    library.viewBooks();
+                    break;
 
-            case 3:
-                library.registerStudent();
-                break;
+                case 3:
+                    library.registerStudent();
+                    break;
 
-            case 4:
-                library.borrowBook();
-                break;
+                case 4:
+                    library.borrowBook();
+                    break;
 
-            case 5:
-                library.returnBook();
-                break;
+                case 5:
+                    library.returnBook();
+                    break;
 
-            case 6:
-                library.viewTransactions();
-                break;
+                case 6:
+                    library.viewTransactions();
+                    break;
 
-            case 7:
-                library.searchBook();
-                break;
+                case 7:
+                    library.searchBook();
+                    break;
 
-            case 8:
-                library.showReport();
-                break;
+                case 8:
+                    library.showReport();
+                    break;
 
-            case 9:
-                cout << "Exiting system..\n";
-                return 0;
+                case 9:
+                    cout << "Exiting system..\n";
+                    return 0;
 
-            default:
-                cout << "Invalid choice\n";
+                default:
+                    cout << "Invalid choice\n";
+            }
+        }else{
+
+            switch(choice){
+                case 1:
+                    library.viewBooks();
+                    break;
+
+                case 2:
+                    library.searchBook();
+                    break;
+
+                case 3:
+                    library.borrowBook();
+                    break;
+
+                case 4:
+                    library.returnBook();
+                    break;
+
+                case 5:
+                    cout << "Exiting... \n";
+                    return 0;
+
+                default:
+                    cout << "Invalid choice\n";
+            }
         }
     }
 }

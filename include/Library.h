@@ -6,6 +6,7 @@
 #include "TransactionManager.h"
 #include "SearchEngine.h"
 #include "ReportManager.h"
+#include "User.h"
 
 class Library {
 
@@ -16,6 +17,7 @@ class Library {
         TransactionManager transactionManager;
         SearchEngine searchEngine;
         ReportManager reportManager;
+        User* currentUser;
 
     public:
 
@@ -34,6 +36,8 @@ class Library {
         void searchBook();
 
         void showReport();
+
+        void setCurrentUser(User* user);
 };
 
 #endif

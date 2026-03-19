@@ -5,6 +5,16 @@ using namespace std;
 
 void Library::addBook(){
 
+    if(currentUser == nullptr){
+        cout << "No user logged in\n";
+        return;
+    }
+
+    if(currentUser->getRole() != "admin"){
+        cout << "Access Denied\n";
+        return;
+    }
+
     int id;
     string title, author;
 
@@ -72,6 +82,10 @@ void Library::returnBook() {
 
     bookManager.returnBook(bookID);
 
+    int fine = 0;
+
+    cout << "Fine (if any): Rs" << fine << endl;
+
     transactionManager.addTransaction(userID, bookID, "Return");
 }
 
@@ -100,4 +114,8 @@ void Library::searchBook() {
 void Library::showReport() {
 
     reportManager.generateReport(bookManager,userManager,transactionManager);
+}
+
+void Library::setCurrentUser(User* user){
+    currentUser = user;
 }

@@ -20,6 +20,10 @@ class TransactionManager{
         int getTransactionCount();
 
         TransactionManager();
+
+        string getCurrentDate();
+
+        string getDueDate();
 };
 
 #endif
