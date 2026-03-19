@@ -49,7 +49,8 @@ int main() {
             cout << "6. View Transaction\n";
             cout << "7. Search Book\n";
             cout << "8. Show Report\n";
-            cout << "9. Exit\n";
+            cout << "9. Delete Book\n";
+            cout << "10. Exit\n";
 
         }else{
 
@@ -99,6 +100,10 @@ int main() {
                     break;
 
                 case 9:
+                    library.deleteBook();
+                    break;
+
+                case 10:
                     cout << "Exiting system..\n";
                     return 0;
 

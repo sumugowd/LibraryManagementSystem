@@ -6,11 +6,36 @@ using namespace std;
 
 void BookManager::addBook(Book book) {
 
+    for( Book &b : books){
+        if(b.getBookID() == book.getBookID()){
+            cout << "Book ID already exists!\n";
+            return;
+        }
+    }
+
     books.push_back(book);
 
     FileManager::saveBooks(books);
 
     cout << "Book added successfully\n";
+}
+
+void BookManager::deleteBook(int id){
+    
+    for(auto it = books.begin(); it != books.end(); it++){
+
+        if(it->getBookID() == id){
+
+            books.erase(it);
+
+            FileManager::saveBooks(books);
+
+            cout << "Book deleted successfully\n";
+            return;
+        }
+    }
+
+    cout << "Book not found\n";
 }
 
 void BookManager::displayAllBooks() {

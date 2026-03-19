@@ -32,6 +32,16 @@ void Library::addBook(){
     bookManager.addBook(Book(id, title, author));
 }
 
+void Library::deleteBook(){
+
+    int id;
+
+    cout << "Enter Book ID to delete: ";
+    cin >> id;
+
+    bookManager.deleteBook(id);
+}
+
 void Library::viewBooks() {
 
     bookManager.displayAllBooks();

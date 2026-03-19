@@ -15,6 +15,8 @@ class BookManager {
 
         void addBook(Book book);
 
+        void deleteBook(int id);
+
         void displayAllBooks();
 
         Book* searchBookByID(int id);

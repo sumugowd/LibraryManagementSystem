@@ -23,6 +23,8 @@ class Library {
 
         void addBook();
 
+        void deleteBook();
+
         void viewBooks();
 
         void registerStudent();
